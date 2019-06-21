@@ -14,7 +14,7 @@ fit1 <- lm(crec~itime*ctime,data=dataframe)
 summary(fit1)
 
 
-p <- ggplot(data=dataframe,aes(x=itime,y=crec,colour=ctime)) + geom_point() + geom_smooth(method="lm")
+p <- ggplot(data=dataframe,aes(x=itime + ctime ,y=crec,colour=ctime)) + geom_point() + geom_smooth(method="lm")
 
 
 p<-p+geom_abline(intercept=fit1$coef[1],slope=fit1$coef[2],colour="orange",linetype=2)
